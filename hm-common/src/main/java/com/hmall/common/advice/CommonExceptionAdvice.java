@@ -51,6 +51,7 @@ public class CommonExceptionAdvice {
 
     @ExceptionHandler(NestedServletException.class)
     public Object handleNestedServletException(NestedServletException e) {
+        System.out.println(e.getMessage());
         log.error("参数异常 -> NestedServletException，{}", e.getMessage());
         log.debug("", e);
         return processResponse(new BadRequestException("请求参数处理异常"));

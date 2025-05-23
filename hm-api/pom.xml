@@ -15,6 +15,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.heima</groupId>
+            <artifactId>hm-common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>3.8.1</version>

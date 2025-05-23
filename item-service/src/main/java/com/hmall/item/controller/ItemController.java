@@ -14,6 +14,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Api(tags = "商品管理相关接口")
@@ -26,7 +27,10 @@ public class ItemController {
 
     @ApiOperation("分页查询商品")
     @GetMapping("/page")
-    public PageDTO<ItemDTO> queryItemByPage(PageQuery query) {
+    public PageDTO<ItemDTO> queryItemByPage(PageQuery query, HttpServletRequest request) {
+        String header = request.getHeader("truth");
+        System.out.println("truth =" + header);
+
         // 1.分页查询
         Page<Item> result = itemService.page(query.toMpPage("update_time", false));
 

@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 public interface TradeClient {
 
     //标记order表中的订单为已支付
-    @PutMapping("/{orderId}")
+    @PutMapping("/orders/{orderId}")
     void markOrderPaySuccess(@PathVariable("orderId") Long orderId);
 }

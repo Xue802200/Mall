@@ -9,8 +9,8 @@ import java.time.Duration;
 @Data
 @ConfigurationProperties(prefix = "hm.jwt")
 public class JwtProperties {
-    private Resource location;
-    private String password;
-    private String alias;
+    private Resource location; //密钥文件位置
+    private String password;   //打开密钥的密码
+    private String alias;      //密钥别名
     private Duration tokenTTL = Duration.ofMinutes(10);
 }
